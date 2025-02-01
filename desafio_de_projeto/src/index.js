@@ -25,7 +25,7 @@ function definirNivel(xp){
 }
  function mostrarInfo() {
     let nivel = definirNivel(xp);
-    console.log(`O heróis ${personagem} está no nível ${nivel}}`);
+    console.log(`O herói ${personagem} está no nível ${nivel}}`);
 }
 
 mostrarInfo();
