@@ -1,29 +1,28 @@
-let personagem = prompt("Digite seu nickname: ");
-console.log(personagem)
+let personagem = prompt("Digite seu nickname: ");console.log(personagem);
 let xp = parseInt(prompt("Digite seu XP: "), 10);
-console.log(xp)
-function definirNivel(xp){
+console.log(xp);
 
-    if (xp < 1000){
-        return "Nível Ferro";
-    } else if (xp >= 1001 && xp <= 2000) {
-        return "Nível Bronze";
-    } else if (xp >= 2001 && xp <= 5000) {
-        return "Nível Prata";
-    } else if (xp >= 5001 && xp <= 7000) {
-        return "Nível Ouro";
-    } else if (xp >= 7001 && xp <= 8000) {
-        return "Nível Platina";
-    } else if (xp >= 8001 && xp <= 9000) {
-        return "Nível Ascendente";
-    } else if (xp >= 9001 && xp <= 10000) {
-        return "Nível Imortal";
-    } else if (xp >= 10001) {
-        return "Nível Radiante";
+function definirNivel(xp) {
+    const niveis = [
+        { min: 0, max: 1000, nivel: "Nível Ferro" },
+        { min: 1001, max: 2000, nivel: "Nível Bronze" },
+        { min: 2001, max: 5000, nivel: "Nível Prata" },
+        { min: 5001, max: 7000, nivel: "Nível Ouro" },
+        { min: 7001, max: 8000, nivel: "Nível Platina" },
+        { min: 8001, max: 9000, nivel: "Nível Ascendente" },
+        { min: 9001, max: 10000, nivel: "Nível Imortal" },
+        { min: 10001, max: Infinity, nivel: "Nível Radiante" }
+    ];
+
+    // Verifica se o XP está dentro de algum nível
+    for (let i = 0; i < niveis.length; i++) {
+        if (xp >= niveis[i].min && xp <= niveis[i].max) {
+            return niveis[i].nivel;
+        }
+    }
 }
 
-}
- function mostrarInfo() {
+function mostrarInfo() {
     let nivel = definirNivel(xp);
     console.log(`O herói ${personagem} está no nível ${nivel}}`);
 }
