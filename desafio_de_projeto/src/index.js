@@ -1,4 +1,8 @@
-let personagem = prompt("Digite seu nickname: ");console.log(personagem);
+const prompt = require("prompt-sync")();
+
+let personagem = prompt("Digite seu nickname: ");
+console.log("Seu nickname é:", personagem);
+
 let xp = parseInt(prompt("Digite seu XP: "), 10);
 console.log(xp);
 
@@ -24,7 +28,7 @@ function definirNivel(xp) {
 
 function mostrarInfo() {
     let nivel = definirNivel(xp);
-    console.log(`O herói ${personagem} está no nível ${nivel}}`);
+    console.log(`O herói ${personagem} está no nível ${nivel}`);
 }
 
 mostrarInfo();
