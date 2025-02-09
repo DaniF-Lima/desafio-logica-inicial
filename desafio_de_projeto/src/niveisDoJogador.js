@@ -1,7 +1,7 @@
 const prompt = require("prompt-sync")();
 
 let personagem = prompt("Digite seu nickname: ");
-console.log("Seu nickname é:", personagem);
+console.log("Seja bem vindo", personagem);
 
 let xp = parseInt(prompt("Digite seu XP: "), 10);
 console.log(xp);
